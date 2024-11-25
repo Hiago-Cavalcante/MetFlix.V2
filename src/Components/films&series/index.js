@@ -27,9 +27,11 @@ export const RenderMovies = () => {
     fetchMovies();
   }, []);
 
+  const moviesToShow = movies.slice(0, 8);
+
   return (
     <div className="movies-grid">
-      {movies.map(movie => (
+      {moviesToShow.map(movie => (
         <MidiaCard
           key={movie.id}
           id={movie.id}
@@ -61,9 +63,11 @@ export const RenderSeries = () => {
     fetchSeries();
   }, []);
 
+  const seriesToShow = series.slice(0, 8);
+
   return (
     <div className="movies-grid">
-      {series.map(serie => (
+      {seriesToShow.map(serie => (
         <MidiaCard
           key={serie.id}
           id={serie.id}
