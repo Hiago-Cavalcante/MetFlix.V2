@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Banner />
       <div className="Movies">
-        <h2>Top Movies Movies</h2>
+        <h2>Top Movies</h2>
         <RenderMovies />
       </div>
       <div className="Series">
