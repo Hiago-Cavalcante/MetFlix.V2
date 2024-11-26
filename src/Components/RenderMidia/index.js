@@ -54,7 +54,7 @@ export const RenderMovies = () => {
       const data = await response.json();
       setMovies(data.results);
       setLoading(false);
-      console.log(data.results);
+      
     } catch (error) {
       console.error('Erro ao buscar filmes:', error);
       setLoading(false);
@@ -78,6 +78,9 @@ export const RenderMovies = () => {
                   <MidiaCard
                     id={movie.id}
                     name={movie.title}
+                    release_date={movie.release_date}
+                    vote_average={movie.vote_average.toFixed(1)}
+                    overview={movie.overview}
                     img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   />
                 </div>
@@ -94,7 +97,7 @@ export const RenderSeries = () => {
   const [series, setSeries] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchMovies = async () => {
+  const fetchSeries = async () => {
     setLoading(true);
     try {
       const response = await fetch(
@@ -112,7 +115,7 @@ export const RenderSeries = () => {
   };
 
   useEffect(() => {
-    fetchMovies();
+    fetchSeries();
   }, []);
 
   return (
@@ -123,12 +126,15 @@ export const RenderSeries = () => {
         <>
           <div className="movies-carousel">
             <Slider {...settings}>
-              {series.map(movie => (
-                <div key={movie.id} className="movie-slide">
+              {series.map(serie => (
+                <div key={serie.id} className="serie-slide">
                   <MidiaCard
-                    id={movie.id}
-                    name={movie.title}
-                    img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    id={serie.id}
+                    name={serie.name}
+                    overview={serie.overview}
+                    vote_average={serie.vote_average.toFixed(1)}
+                    release_date={serie.first_air_date}
+                    img={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
                   />
                 </div>
               ))}

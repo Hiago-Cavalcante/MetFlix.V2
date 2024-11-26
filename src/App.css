@@ -2,12 +2,14 @@
   background: rgba(0, 0, 0, 0.959);
 }
 
-.Movies h2 {
+.Movies h1 {
   color: white;
   margin-left: 110px;
+  margin-top: 10px;
 }
 
-.Series h2 {
+.Series h1 {
   color: white;
   margin-left: 110px;
+  margin-top: 40px;
 }

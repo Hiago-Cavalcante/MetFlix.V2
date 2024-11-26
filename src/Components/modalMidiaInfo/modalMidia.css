@@ -1,0 +1,33 @@
+.Modal-Wrapper {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 38%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o ponto de ancoragem */
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Certifique-se de que o modal fique sobre a imagem */
+    color: white;
+  }
+  
+  .Modal-Content {
+    text-align: center;
+  }
+  
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #111010;
+  }
+  
