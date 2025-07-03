@@ -46,7 +46,14 @@ export const MediaSection: React.FC<MediaSectionProps> = ({
   const renderSkeletons = () => {
     const columns = getGridColumns();
     return Array.from({ length: columns }).map((_, index) => (
-      <Grid item xs={12 / columns} key={index}>
+      <Box 
+        key={index} 
+        sx={{ 
+          flex: `1 1 calc(${100 / columns}% - 16px)`,
+          minWidth: 0,
+          margin: 1
+        }}
+      >
         <Box>
           <Skeleton variant="rectangular" height={300} sx={{ borderRadius: 1 }} />
           <Box sx={{ pt: 1 }}>
@@ -54,7 +61,7 @@ export const MediaSection: React.FC<MediaSectionProps> = ({
             <Skeleton variant="text" height={20} width="60%" />
           </Box>
         </Box>
-      </Grid>
+      </Box>
     ));
   };
 
@@ -94,28 +101,38 @@ export const MediaSection: React.FC<MediaSectionProps> = ({
         {title}
       </Typography>
 
-      <Grid container spacing={2}>
+      <Box sx={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        gap: 2,
+        margin: -1 
+      }}>
         {loading ? (
           renderSkeletons()
         ) : (
           media.slice(0, 12).map((item) => (
-            <Grid
-              item
+            <Box
               key={item.id}
-              xs={6}
-              sm={4}
-              md={3}
-              lg={2}
+              sx={{
+                flex: {
+                  xs: '1 1 calc(50% - 16px)',    // 2 columns on mobile
+                  sm: '1 1 calc(33.333% - 16px)', // 3 columns on tablet
+                  md: '1 1 calc(25% - 16px)',     // 4 columns on medium
+                  lg: '1 1 calc(16.666% - 16px)'  // 6 columns on large
+                },
+                minWidth: 0,
+                margin: 1
+              }}
             >
               <MediaCard
                 media={item}
                 onSelect={onMediaSelect}
                 onAddToList={onAddToList}
               />
-            </Grid>
+            </Box>
           ))
         )}
-      </Grid>
+      </Box>
 
       {!loading && media.length === 0 && (
         <Box

@@ -4,7 +4,6 @@ import {
   Container,
   Typography,
   Link,
-  Grid,
   IconButton,
   Divider,
   useTheme,
@@ -55,9 +54,16 @@ export const Footer: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', md: 'row' }, 
+          gap: 4 
+        }}>
           {/* Brand Section */}
-          <Grid item xs={12} md={4}>
+          <Box sx={{ 
+            flex: { xs: '1 1 100%', md: '1 1 33.333%' },
+            minWidth: 0 
+          }}>
             <Typography
               variant="h5"
               component="div"
@@ -99,13 +105,23 @@ export const Footer: React.FC = () => {
                 </IconButton>
               ))}
             </Box>
-          </Grid>
+          </Box>
 
           {/* Links Sections */}
-          <Grid item xs={12} md={8}>
-            <Grid container spacing={4}>
+          <Box sx={{ 
+            flex: { xs: '1 1 100%', md: '1 1 66.666%' },
+            minWidth: 0 
+          }}>
+            <Box sx={{ 
+              display: 'flex', 
+              flexDirection: { xs: 'column', sm: 'row' }, 
+              gap: 4 
+            }}>
               {/* Company Links */}
-              <Grid item xs={12} sm={4}>
+              <Box sx={{ 
+                flex: '1 1 33.333%',
+                minWidth: 0 
+              }}>
                 <Typography
                   variant="h6"
                   component="h3"
@@ -134,10 +150,13 @@ export const Footer: React.FC = () => {
                     </Link>
                   ))}
                 </Box>
-              </Grid>
+              </Box>
 
               {/* Support Links */}
-              <Grid item xs={12} sm={4}>
+              <Box sx={{ 
+                flex: '1 1 33.333%',
+                minWidth: 0 
+              }}>
                 <Typography
                   variant="h6"
                   component="h3"
@@ -166,10 +185,13 @@ export const Footer: React.FC = () => {
                     </Link>
                   ))}
                 </Box>
-              </Grid>
+              </Box>
 
               {/* Legal Links */}
-              <Grid item xs={12} sm={4}>
+              <Box sx={{ 
+                flex: '1 1 33.333%',
+                minWidth: 0 
+              }}>
                 <Typography
                   variant="h6"
                   component="h3"
@@ -198,10 +220,10 @@ export const Footer: React.FC = () => {
                     </Link>
                   ))}
                 </Box>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
 
         <Divider sx={{ my: 4 }} />
 
