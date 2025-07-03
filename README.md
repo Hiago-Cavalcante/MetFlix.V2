@@ -1,12 +1,51 @@
-# Getting Started with Create React App
+# MetFlix V2 🎬
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Netflix-inspired streaming platform interface built with React, TypeScript, Material-UI, and following SOLID principles and Clean Code practices.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Modern UI Design**: Netflix-inspired dark theme with smooth animations
+- **TypeScript**: Full type safety and enhanced developer experience
+- **Material-UI**: Professional, responsive components with customizable theming
+- **SOLID Principles**: Clean architecture with dependency injection and separation of concerns
+- **Responsive Design**: Optimized for mobile, tablet, and desktop devices
+- **Movie & TV Show Discovery**: Browse popular movies and TV shows using TMDB API
+- **Interactive Media Cards**: Hover effects and detailed information modals
+- **Search Functionality**: Find your favorite content quickly
+- **Watchlist Management**: Add and manage your personal watchlist
 
-### `npm start`
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- TMDB API key
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/metflix-v2.git
+   cd metflix-v2
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edit `.env` and add your TMDB API key:
+   ```
+   REACT_APP_TMDB_API_KEY=your_tmdb_api_key_here
+   ```
+
+4. **Start the development server**
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
